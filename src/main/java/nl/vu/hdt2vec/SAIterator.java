@@ -27,8 +27,6 @@ public class SAIterator implements SentenceIterator
 	{
 		this.file = file;
 		this.direction = direction;
-				
-
 	}
 
 	@Override
@@ -39,8 +37,12 @@ public class SAIterator implements SentenceIterator
 		String out = "";
 		for(int i : Series.series(record.size()))
 		{
+			if(!direction && (i-1) % 3 == 0) // skip the directions
+				continue;
+			
 			if(i > 0)
 				out += " ";
+			
 			out += record.get(i).hashCode();
 		}
 		

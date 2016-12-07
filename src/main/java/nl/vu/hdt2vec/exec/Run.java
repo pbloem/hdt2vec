@@ -24,6 +24,7 @@ import org.kohsuke.args4j.CmdLineParser;
 import org.kohsuke.args4j.Option;
 
 import nl.peterbloem.kit.Global;
+import nl.vu.hdt2vec.SAIterator;
 
 public class Run
 {
@@ -36,7 +37,7 @@ public class Run
 	private static File targetsFile;
 	
 	@Option(name="--sequences", usage="A file containing the sequences to be used. If this argument is set hdtFile is ignored.")
-	private static File sequencesFile;
+	private static File sequencesFile = null;
 	
 	@Option(name="--sentence-length", usage="Sentence length.")
 	private static int sentenceLength = 5;
@@ -82,9 +83,15 @@ public class Run
 			line = reader.readLine();
 		} 
 		
-		
-		// * TODO: Get sentence Iterator 
 		SentenceIterator it = null;
+		
+		if(sequencesFile != null)
+		{
+			it = new SAIterator(sequencesFile, false);
+		} else 
+		{
+			throw new RuntimeException("not implemented yet.");
+		}
 		
 		TokenizerFactory t = new DefaultTokenizerFactory();
         t.setTokenPreProcessor(new CommonPreprocessor());
