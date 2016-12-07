@@ -35,6 +35,9 @@ public class Run
 	@Option(name="--targets", usage="A list (one IRI per line) of the nodes to analyse. This can be a CSV file, in which case only the first element on ech line is used.")
 	private static File targetsFile;
 	
+	@Option(name="--sequences", usage="A file containing the sequences to be used. If this argument is set hdtFile is ignored.")
+	private static File sequencesFile;
+	
 	@Option(name="--sentence-length", usage="Sentence length.")
 	private static int sentenceLength = 5;
 	
