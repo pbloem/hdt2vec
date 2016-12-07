@@ -99,11 +99,6 @@
   		<version>0.5.0</version>
   	</dependency>
   	<dependency>
-  		<groupId>data2semantics</groupId>
-  		<artifactId>nodes</artifactId>
-  		<version>0.0.1-SNAPSHOT</version>
-  	</dependency>
-  	<dependency>
   		<groupId>org.deeplearning4j</groupId>
   		<artifactId>deeplearning4j-nlp</artifactId>
   		<version>0.5.0</version>
@@ -122,7 +117,12 @@
 		<groupId>args4j</groupId>
 		<artifactId>args4j</artifactId>
 		<version>2.33</version>
-	</dependency>  	
+	</dependency> 
+	<dependency>
+        <groupId>com.github.pbloem</groupId>
+        <artifactId>kit</artifactId>
+        <version>v0.1.12</version>
+    </dependency> 	
   </dependencies>
 
   <dependencyManagement>
@@ -134,5 +134,12 @@
     </dependency>    
    </dependencies>
   </dependencyManagement>  
+  
+  <repositories>
+	  <repository>
+	      <id>jitpack.io</id>
+	      <url>https://jitpack.io</url>
+	  </repository>
+  </repositories>
   
 </project>
